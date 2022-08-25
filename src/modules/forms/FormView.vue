@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="justify-center text-center">
-      <v-col cols="12" sm="12" md="10">
+      <v-col cols="12" sm="12" md="12">
         <v-card>
           <v-card-title class="justify-center grey darken-3 white--text"
             >Entrega de turnos ambulancias</v-card-title
@@ -188,8 +188,7 @@
                     <v-select label="Alicate (1)"> </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Destornillador de estría (3)">
-                    </v-select>
+                    <v-select label="Destornillador de estría (3)"> </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
                     <v-select label="Destornillador de pala"> </v-select>
@@ -198,7 +197,7 @@
                     <v-select label="Llave de expansión"> </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Llaves mixtas ()"> </v-select>
+                    <v-select label="Llaves mixtas (6)"> </v-select>
                   </v-col>
                 </v-row>
                 <v-row>
@@ -229,9 +228,7 @@
                     <v-select label="Cuerda estática de 20 m"> </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select
-                      label="Juego de cables para iniciación eléctrica"
-                    >
+                    <v-select label="Juego de cables para iniciación eléctrica">
                     </v-select>
                   </v-col>
                 </v-row>
@@ -262,92 +259,147 @@
 
             <v-stepper-content step="4">
               <div class="mt-4 mb-4">
-                Revisar si el equipo médico se encuentra presente:
+                Revisar si el equipo médico se encuentra presente o si está
+                completo:
               </div>
               <v-form ref="form" lazy-validation>
                 <v-row>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Electrocardiógrafo"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Electrocardiógrafo"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Pulsioxímetro"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Pulsioxímetro"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Nebulizador"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Nebulizador"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Cilindro de oxígeno"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Cilindro de oxígeno"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Pico flujo"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Pico flujo"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Aspirador"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Aspirador"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Desfibrilador"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Desfibrilador"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Ventilador"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Ventilador"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Bomba de infusión"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Bomba de infusión"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Monitor"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Monitor"> </v-select>
                   </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="12" sm="4" md="2">
+                  <v-col cols="12" sm="6" md="4">
                     <v-select label="Maleta reanimación"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
+                  <v-col cols="12" sm="6" md="4">
                     <v-select label="Maleta médica"> </v-select>
                   </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Equipo de sutura"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Equipo de sutura"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Equipo de parto"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Equipo de parto"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Torniquete"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Torniquete"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Silla de ruedas"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Silla de ruedas"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Camilla principal"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Camilla principal"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Camilla secundaria"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Camilla secundaria"> </v-select>
                   </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Pinza de Maguill"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Pinza de Maguill"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Tabla espinal"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Tabla espinal"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Riñonera"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Riñonera"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Corta anillos"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Corta anillos"> </v-select>
                   </v-col>
-                  <v-col cols="12" sm="4" md="2">
-                    <v-checkbox label="Pato H/M"> </v-checkbox>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Pato H/M"> </v-select>
                   </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="12" sm="4" md="2">
+                  <v-col cols="12" sm="6" md="4">
                     <v-select label="Material de trauma"> </v-select>
                   </v-col>
                 </v-row>
               </v-form>
+
+              <v-row class="justify-center mb-4 mt-4">
+                <v-btn
+                  color="primary"
+                  fab
+                  small
+                  dark
+                  @click="e1--, scrollToTop()"
+                  class="mr-1"
+                >
+                  <v-icon dark>mdi-arrow-left-thick</v-icon>
+                </v-btn>
+                <v-btn
+                  color="primary"
+                  fab
+                  small
+                  dark
+                  @click="e1++, scrollToTop()"
+                >
+                  <v-icon dark>mdi-arrow-right-thick</v-icon>
+                </v-btn>
+              </v-row>
+            </v-stepper-content>
+
+            <v-stepper-content step="5">
+              <div class="mt-4 mb-4">
+                Este espacio es para proporcionar comentarios respecto al cambio
+                de turno.
+              </div>
+
+              <v-form ref="form" lazy-validation>
+                <v-row>
+                  <v-col cols="12" md="6" sm="6">
+                    <v-checkbox v-model="toggleNovedades" label="¿Han habido novedades?"></v-checkbox>
+                  </v-col>
+                  <v-col cols="12" md="6" sm="6">
+                    <v-textarea :disabled="!toggleNovedades" label="Describir las novedades presentadas"></v-textarea>
+                  </v-col>
+                </v-row>
+              </v-form>
+
+              <v-row class="justify-center mb-4 mt-4">
+                <v-btn
+                  color="primary"
+                  fab
+                  small
+                  dark
+                  @click="e1--, scrollToTop()"
+                  class="mr-1"
+                >
+                  <v-icon dark>mdi-arrow-left-thick</v-icon>
+                </v-btn>
+                <v-btn
+                  color="success"
+                  fab
+                  small
+                  dark
+                  @click="scrollToTop()"
+                >
+                  <v-icon dark>mdi-check-bold</v-icon>
+                </v-btn>
+              </v-row>
             </v-stepper-content>
           </v-stepper-items>
         </v-stepper>
@@ -361,6 +413,17 @@ export default {
   data() {
     return {
       e1: 1,
+      toggleNovedades: false,
+      selectChequeo: [
+        'Cumple',
+        'No cumple',
+        'No aplica'
+      ],
+      selectLlantas: [
+        'Bueno',
+        'Regular',
+        'Malo'
+      ]
     };
   },
 
