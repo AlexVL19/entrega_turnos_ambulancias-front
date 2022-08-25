@@ -61,9 +61,9 @@
                 </v-row>
 
                 <div class="mt-4 mb-4">
-                      Por favor revisar si los siguientes elementos están
-                      presentes o siguen vigentes:
-                    </div>
+                  Por favor revisar si los siguientes elementos están presentes
+                  o siguen vigentes:
+                </div>
 
                 <v-row>
                   <v-col cols="12" sm="5" md="2">
@@ -81,112 +81,273 @@
                   <v-col cols="12" sm="5" md="2">
                     <v-checkbox label="Chalecos"> </v-checkbox>
                   </v-col>
-
-
                 </v-row>
               </v-form>
 
               <v-col cols="12" class="justify-center" align="center">
-                <v-btn color="primary" dark>
-                    <v-icon dark class="mr-1" @click="e1 = 2">mdi-arrow-right-thick</v-icon>
-                    Siguiente
+                <v-btn
+                  color="primary"
+                  fab
+                  small
+                  dark
+                  @click="e1++, scrollToTop()"
+                >
+                  <v-icon dark>mdi-arrow-right-thick</v-icon>
                 </v-btn>
               </v-col>
             </v-stepper-content>
 
             <v-stepper-content step="2">
-                <div class="mt-4 mb-4">
-                      Por favor revisar si los siguientes elementos están
-                      presentes:
-                    </div>
-                <v-form ref="form" lazy-validation>
-                    <v-row>
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Combustible"
-                            >
-                            </v-checkbox>
-                        </v-col> 
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Aceite de motor"
-                            >
-                            </v-checkbox>
-                        </v-col> 
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Aceite hidráulico"
-                            >
-                            </v-checkbox>
-                        </v-col> 
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Agua"
-                            >
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Líquido de frenos"
-                            >
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Suspensión"
-                            >
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Sistema eléctrico"
-                            >
-                            </v-checkbox>
-                        </v-col>    
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Testigo tablero"
-                            >
-                            </v-checkbox>
-                        </v-col> 
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Latonería y pintura"
-                            >
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Aseo"
-                            >
-                            </v-checkbox>
-                        </v-col> 
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Tapa interior combustible"
-                            >
-                            </v-checkbox>
-                        </v-col> 
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Tapa exterior combustible"
-                            >
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Martillo de fragmentación"
-                            >
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="6" sm="4" md="2">
-                            <v-checkbox
-                            label="Sirena con perifoneo"
-                            >
-                            </v-checkbox>
-                        </v-col> 
-                    </v-row>
-                </v-form>
+              <div class="mt-4 mb-4">
+                Por favor revisar si los siguientes elementos están presentes:
+              </div>
+              <v-form ref="form" lazy-validation>
+                <v-row>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Combustible"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Aceite de motor"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Aceite hidráulico"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Agua"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Líquido de frenos"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Suspensión"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Sistema eléctrico"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Testigo tablero"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Latonería y pintura"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Aseo"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Tapa interior combustible"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Tapa exterior combustible"> </v-select>
+                  </v-col>
+                </v-row>
+
+                <v-row class="justify-center">
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Martillo de fragmentación"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Sirena con perifoneo"> </v-select>
+                  </v-col>
+                </v-row>
+              </v-form>
+
+              <v-row class="justify-center mb-4 mt-4">
+                <v-btn
+                  color="primary"
+                  fab
+                  small
+                  dark
+                  @click="e1--, scrollToTop()"
+                  class="mr-1"
+                >
+                  <v-icon dark>mdi-arrow-left-thick</v-icon>
+                </v-btn>
+                <v-btn
+                  color="primary"
+                  fab
+                  small
+                  dark
+                  @click="e1++, scrollToTop()"
+                >
+                  <v-icon dark>mdi-arrow-right-thick</v-icon>
+                </v-btn>
+              </v-row>
+            </v-stepper-content>
+
+            <v-stepper-content step="3">
+              <div class="mb-4 mt-4">
+                Por favor revisar si las siguientes herramientas están
+                disponibles:
+              </div>
+              <v-form ref="form" lazy-validation>
+                <v-row>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Extintor vigente"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Alicate (1)"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Destornillador de estría (3)">
+                    </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Destornillador de pala"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Llave de expansión"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Llaves mixtas ()"> </v-select>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Llanta de repuesto"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Llave de pernos"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Señales de emergencia (2)"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Linterna con pilas"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Caja de fusibles surtidos"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Gato"> </v-select>
+                  </v-col>
+                </v-row>
+                <v-row class="justify-center">
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Tacos (2)"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select label="Cuerda estática de 20 m"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-select
+                      label="Juego de cables para iniciación eléctrica"
+                    >
+                    </v-select>
+                  </v-col>
+                </v-row>
+              </v-form>
+
+              <v-row class="justify-center mb-4 mt-4">
+                <v-btn
+                  color="primary"
+                  fab
+                  small
+                  dark
+                  @click="e1--, scrollToTop()"
+                  class="mr-1"
+                >
+                  <v-icon dark>mdi-arrow-left-thick</v-icon>
+                </v-btn>
+                <v-btn
+                  color="primary"
+                  fab
+                  small
+                  dark
+                  @click="e1++, scrollToTop()"
+                >
+                  <v-icon dark>mdi-arrow-right-thick</v-icon>
+                </v-btn>
+              </v-row>
+            </v-stepper-content>
+
+            <v-stepper-content step="4">
+              <div class="mt-4 mb-4">
+                Revisar si el equipo médico se encuentra presente:
+              </div>
+              <v-form ref="form" lazy-validation>
+                <v-row>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Electrocardiógrafo"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Pulsioxímetro"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Nebulizador"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Cilindro de oxígeno"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Pico flujo"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Aspirador"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Desfibrilador"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Ventilador"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Bomba de infusión"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Monitor"> </v-checkbox>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-select label="Maleta reanimación"> </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-select label="Maleta médica"> </v-select>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Equipo de sutura"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Equipo de parto"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Torniquete"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Silla de ruedas"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Camilla principal"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Camilla secundaria"> </v-checkbox>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Pinza de Maguill"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Tabla espinal"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Riñonera"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Corta anillos"> </v-checkbox>
+                  </v-col>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-checkbox label="Pato H/M"> </v-checkbox>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="12" sm="4" md="2">
+                    <v-select label="Material de trauma"> </v-select>
+                  </v-col>
+                </v-row>
+              </v-form>
             </v-stepper-content>
           </v-stepper-items>
         </v-stepper>
@@ -201,6 +362,12 @@ export default {
     return {
       e1: 1,
     };
+  },
+
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
   },
 };
 </script>
