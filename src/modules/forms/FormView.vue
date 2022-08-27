@@ -232,7 +232,7 @@
                   </v-col>
                 </v-row>
 
-                <v-row class="justify-center" v-if="noAplica">
+                <v-row class="justify-center" v-if="noAplicaEstado">
                   <v-col cols="8" sm="6" md="8">
                     <v-textarea label="Comentarios"></v-textarea>
                   </v-col>
@@ -394,6 +394,12 @@
                     </v-select>
                   </v-col>
                 </v-row>
+
+                <v-row class="justify-center" v-if="noAplicaHerramientas">
+                  <v-col cols="8" sm="6" md="8">
+                    <v-textarea label="Comentarios"></v-textarea>
+                  </v-col>
+                </v-row>
               </v-form>
 
               <v-row class="justify-center mb-4 mt-4">
@@ -427,109 +433,202 @@
               <v-form ref="form" lazy-validation>
                 <v-row>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Electrocardiógrafo" :items="selectChequeo">
+                    <v-select
+                      label="Electrocardiógrafo"
+                      :items="selectChequeo"
+                      v-model="equipos.electrocardiografo"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Pulsioxímetro" :items="selectChequeo">
+                    <v-select
+                      label="Pulsioxímetro"
+                      :items="selectChequeo"
+                      v-model="equipos.pulsioximetro"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Nebulizador" :items="selectChequeo">
+                    <v-select
+                      label="Nebulizador"
+                      :items="selectChequeo"
+                      v-model="equipos.nebulizador"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
                     <v-select
                       label="Cilindro de oxígeno"
                       :items="selectChequeo"
+                      v-model="equipos.cilindro_oxigeno"
                     >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Pico flujo" :items="selectChequeo">
+                    <v-select
+                      label="Pico flujo"
+                      :items="selectChequeo"
+                      v-model="equipos.pico_flujo"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Aspirador" :items="selectChequeo">
+                    <v-select
+                      label="Aspirador"
+                      :items="selectChequeo"
+                      v-model="equipos.aspirador"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Desfibrilador" :items="selectChequeo">
+                    <v-select
+                      label="Desfibrilador"
+                      :items="selectChequeo"
+                      v-model="equipos.desfibrilador"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Ventilador" :items="selectChequeo">
+                    <v-select
+                      label="Ventilador"
+                      :items="selectChequeo"
+                      v-model="equipos.ventilador"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Bomba de infusión" :items="selectChequeo">
+                    <v-select
+                      label="Bomba de infusión"
+                      :items="selectChequeo"
+                      v-model="equipos.bomba_infusion"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Monitor" :items="selectChequeo">
+                    <v-select
+                      label="Monitor"
+                      :items="selectChequeo"
+                      v-model="equipos.monitor"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
                     <v-select
                       label="Maleta reanimación"
                       :items="selectMaletines"
+                      v-model="equipos.maletin_reanimacion"
                     >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Maleta médica" :items="selectMaletines">
+                    <v-select
+                      label="Maleta médica"
+                      :items="selectMaletines"
+                      v-model="equipos.maleta_medica"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Equipo de sutura" :items="selectChequeo">
+                    <v-select
+                      label="Equipo de sutura"
+                      :items="selectChequeo"
+                      v-model="equipos.equipo_sutura"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Equipo de parto" :items="selectChequeo">
+                    <v-select
+                      label="Equipo de parto"
+                      :items="selectChequeo"
+                      v-model="equipos.equipo_parto"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Torniquete" :items="selectChequeo">
+                    <v-select
+                      label="Torniquete"
+                      :items="selectChequeo"
+                      v-model="equipos.torniquete"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Silla de ruedas" :items="selectChequeo">
+                    <v-select
+                      label="Silla de ruedas"
+                      :items="selectChequeo"
+                      v-model="equipos.silla_ruedas"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Camilla principal" :items="selectChequeo">
+                    <v-select
+                      label="Camilla principal"
+                      :items="selectChequeo"
+                      v-model="equipos.camilla_prin"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Camilla secundaria" :items="selectChequeo">
+                    <v-select
+                      label="Camilla secundaria"
+                      :items="selectChequeo"
+                      v-model="equipos.camilla_sec"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Pinza de Maguill" :items="selectChequeo">
+                    <v-select
+                      label="Pinza de Maguill"
+                      :items="selectChequeo"
+                      v-model="equipos.pinza"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Tabla espinal" :items="selectChequeo">
+                    <v-select
+                      label="Tabla espinal"
+                      :items="selectChequeo"
+                      v-model="equipos.tabla_espinal"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Riñonera" :items="selectChequeo">
+                    <v-select
+                      label="Riñonera"
+                      :items="selectChequeo"
+                      v-model="equipos.rinonera"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Corta anillos" :items="selectChequeo">
+                    <v-select
+                      label="Corta anillos"
+                      :items="selectChequeo"
+                      v-model="equipos.corta_anillos"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-select label="Pato H/M" :items="selectChequeo">
+                    <v-select
+                      label="Pato H/M"
+                      :items="selectChequeo"
+                      v-model="equipos.pato"
+                    >
                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
                     <v-select
                       label="Material de trauma"
                       :items="selectMaletines"
+                      v-model="equipos.mat_trauma"
                     >
                     </v-select>
+                  </v-col>
+                </v-row>
+
+                <v-row class="justify-center" v-if="noAplicaEquipos">
+                  <v-col cols="8" sm="6" md="8">
+                    <v-textarea label="Comentarios"></v-textarea>
                   </v-col>
                 </v-row>
               </v-form>
@@ -576,6 +675,9 @@
                       :disabled="!toggleNovedades"
                       label="Describir las novedades presentadas"
                     ></v-textarea>
+                  </v-col>
+                  <v-col cols="12">
+                    <VueSignaturePad height="612px" ref="pad"/>
                   </v-col>
                 </v-row>
               </v-form>
@@ -680,6 +782,10 @@ export default {
       noAplicaEstado: false,
       noAplicaHerramientas: false,
       noAplicaEquipos: false,
+
+      imagenes: [
+        {src: '../../assets/ambulancia.jpg', x: 0, y: 0}
+      ]
     };
   },
 
@@ -709,6 +815,23 @@ export default {
           }
         }
       },
+      deep: true,
+    },
+
+    equipos: {
+      handler: function (val) {
+        const arrayLlaves = Object.keys(val);
+        this.noAplicaEquipos = false;
+
+        for (let index = 0; index < arrayLlaves.length; index++) {
+          if (
+            val[arrayLlaves[index]] == "No aplica" ||
+            val[arrayLlaves[index]] == "Abierto"
+          ) {
+            this.noAplicaEquipos = true;
+          }
+        }
+      },
     },
   },
 
@@ -717,5 +840,9 @@ export default {
       window.scrollTo(0, 0);
     },
   },
+
+  created() {
+    this.$refs.pad.addImages(this.imagenes)
+  }
 };
 </script>
