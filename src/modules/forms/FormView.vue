@@ -47,12 +47,14 @@
                     <v-text-field
                       label="Kilometraje"
                       type="number"
+                      v-model="verificacion.kilometraje"
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="4" md="3">
                     <v-select
                       label="Estado de llantas delanteras"
                       :items="selectLlantas"
+                      v-model="verificacion.estado_llantas_del"
                     >
                     </v-select>
                   </v-col>
@@ -60,6 +62,7 @@
                     <v-select
                       label="Estado de llantas traseras"
                       :items="selectLlantas"
+                      v-model="verificacion.estado_llantas_tra"
                     >
                     </v-select>
                   </v-col>
@@ -67,6 +70,7 @@
                     <v-select
                       label="Estado de llantas de repuesto"
                       :items="selectLlantas"
+                      v-model="verificacion.estado_llantas_rep"
                     >
                     </v-select>
                   </v-col>
@@ -79,19 +83,33 @@
 
                 <v-row>
                   <v-col cols="12" sm="5" md="2">
-                    <v-checkbox label="SOAT"> </v-checkbox>
+                    <v-checkbox label="SOAT" v-model="verificacion.soat">
+                    </v-checkbox>
                   </v-col>
                   <v-col cols="12" sm="5" md="3">
-                    <v-checkbox label="Tecnicomecánica"> </v-checkbox>
+                    <v-checkbox
+                      label="Tecnicomecánica"
+                      v-model="verificacion.tecnicomecanica"
+                    >
+                    </v-checkbox>
                   </v-col>
                   <v-col cols="12" sm="5" md="2">
-                    <v-checkbox label="Botiquín"> </v-checkbox>
+                    <v-checkbox
+                      label="Botiquín"
+                      v-model="verificacion.botiquin"
+                    >
+                    </v-checkbox>
                   </v-col>
                   <v-col cols="12" sm="5" md="2">
-                    <v-checkbox label="Cascos"> </v-checkbox>
+                    <v-checkbox label="Cascos" v-model="verificacion.cascos">
+                    </v-checkbox>
                   </v-col>
                   <v-col cols="12" sm="5" md="2">
-                    <v-checkbox label="Chalecos"> </v-checkbox>
+                    <v-checkbox
+                      label="Chalecos"
+                      v-model="verificacion.chalecos"
+                    >
+                    </v-checkbox>
                   </v-col>
                 </v-row>
               </v-form>
@@ -666,18 +684,20 @@
                 <v-row>
                   <v-col cols="12" md="6" sm="6">
                     <v-checkbox
-                      v-model="toggleNovedades"
+                      v-model="comentarios.novedades"
                       label="¿Han habido novedades?"
                     ></v-checkbox>
                   </v-col>
+
                   <v-col cols="12" md="6" sm="6">
                     <v-textarea
-                      :disabled="!toggleNovedades"
+                      :disabled="!comentarios.novedades"
+                      v-model="comentarios.observaciones"
                       label="Describir las novedades presentadas"
                     ></v-textarea>
                   </v-col>
                   <v-col cols="12">
-                    <VueSignaturePad height="612px" ref="pad"/>
+                    <VueSignaturePad height="612px" ref="pad" />
                   </v-col>
                 </v-row>
               </v-form>
@@ -693,7 +713,7 @@
                 >
                   <v-icon dark>mdi-arrow-left-thick</v-icon>
                 </v-btn>
-                <v-btn color="success" fab small dark @click="scrollToTop()">
+                <v-btn color="success" fab small dark @click="submitForm()">
                   <v-icon dark>mdi-check-bold</v-icon>
                 </v-btn>
               </v-row>
@@ -706,6 +726,8 @@
 </template>
 
 <script>
+import formDataService from "../forms/services/FormDataService"
+
 export default {
   data() {
     return {
@@ -716,6 +738,18 @@ export default {
       selectLlantas: ["Bueno", "Regular", "Malo"],
 
       selectMaletines: ["Sellado", "Abierto"],
+
+      verificacion: {
+        kilometraje: "",
+        estado_llantas_del: "",
+        estado_llantas_tra: "",
+        estado_llantas_rep: "",
+        soat: "",
+        tecnicomecanica: "",
+        botiquin: "",
+        cascos: "",
+        chalecos: "",
+      },
 
       estadoVehiculo: {
         combustible: "",
@@ -779,13 +813,16 @@ export default {
         pato: "",
       },
 
+      comentarios: {
+        novedades: false,
+        observaciones: ""
+      },
+
       noAplicaEstado: false,
       noAplicaHerramientas: false,
       noAplicaEquipos: false,
 
-      imagenes: [
-        {src: '../../assets/ambulancia.jpg', x: 0, y: 0}
-      ]
+      imagenes: [{ src: "../../assets/ambulancia.jpg", x: 0, y: 0 }],
     };
   },
 
@@ -839,10 +876,22 @@ export default {
     scrollToTop() {
       window.scrollTo(0, 0);
     },
-  },
 
-  created() {
-    this.$refs.pad.addImages(this.imagenes)
-  }
+    submitForm() {
+     let arrayFormulario = [this.verificacion, this.estadoVehiculo, this.herramientas, this.equipos, this.comentarios]
+
+     const promises = arrayFormulario.map((obj) => {
+      return formDataService.getRequest(obj).then((response) => response.data)
+     })
+
+     Promise.allSettled(promises)
+     .then((data) => {
+      console.log(data)
+     })
+     .catch((error) => {
+      console.log(error)
+     })
+    }
+  },
 };
 </script>
